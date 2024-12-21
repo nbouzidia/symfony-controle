@@ -1,17 +1,35 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
-        {% block stylesheets %}
-        {% endblock %}
+<html lang="fr">
 
-        {% block javascripts %}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
-        {% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mon site des recettes{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="font-sans bg-gray-100 flex flex-col min-h-screen">
+
+<!-- Header -->
+<header class="bg-blue-600 text-white py-4">
+    <div class="container mx-auto text-center">
+        <h1 class="text-3xl font-bold">Mon site des recettes</h1>
+    </div>
+</header>
+
+<!-- Main Content -->
+<main class="container mx-auto my-8 flex-grow">
+    {% block body %}{% endblock %}
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 text-white py-6 mt-auto">
+    <div class="container mx-auto text-center">
+        <p>&copy; {{ "now"|date("Y") }} Mon site des recettes. Tous droits réservés.</p>
+        <p class="text-sm">Fait avec <span class="text-red-500">&hearts;</span> par BOUZIDIA Nassim</p>
+    </div>
+</footer>
+
+</body>
+
 </html>
