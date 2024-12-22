@@ -16,5 +16,13 @@ class DefaultController extends AbstractController
             'message' => $message,
         ]);
     }
+    #[Route('/welcome', name: 'welcome_page')]
+    public function welcome(): Response
+    {
+        $message = 'Bienvenue sur le site des recettes !';
+        return $this->render('security/welcome.html.twig', [
+            'message' => $message,
+        ]);
+    }
 
 }
