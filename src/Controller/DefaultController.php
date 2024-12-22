@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/hello', name: 'home')]
+    #[Route('/', name: 'home')]
     public function index(): Response
     {
         $message = 'Bienvenue sur le site des recettes !';
